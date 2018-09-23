@@ -10,16 +10,29 @@ using Microsoft.Extensions.Logging;
 
 namespace AdminApi
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            BuildWebHost(args).Run();
-        }
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+			BuildWebHost(args).Run();
+		}
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
-    }
+		public static IWebHost BuildWebHost(string[] args) =>
+			//new WebHostBuilder()
+			//	.UseKestrel()
+			//	.UseContentRoot(Directory.GetCurrentDirectory())
+			//	.ConfigureAppConfiguration(
+			//	config => config.AddJsonFile("appSettings.json", true)
+			//	)
+			//.ConfigureLogging(logging =>
+			//	logging.AddConsole()
+			//		   .AddDebug())
+			//.UseIISIntegration()
+			//.UseStartup<Startup>()
+			//.Build();
+
+			WebHost.CreateDefaultBuilder(args)
+				.UseStartup<Startup>()
+				.Build();
+	}
 }
